@@ -1,0 +1,17 @@
+{
+  "name": "illegal-s3-requests",
+  "version": "1.0.0",
+  "description": "Generate illegal S3 requests for testing",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pat@backblaze.com",
+  "license": "MIT",
+  "dependencies": {
+    "aws4": "^1.12.0",
+    "dotenv": "^16.3.1"
+  }
+}
