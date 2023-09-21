@@ -48,14 +48,14 @@ aws4.sign(opts)
 // opts.path = '/anything';
 // opts.method = 'POST'; // httpbin doesn't support PUT :-(
 
-// Transfer-encoding: chunked
-
-// Construct HTTP request from scratch so we can control the headers
-// This is an illegal request with both Content-length and Transfer-encoding
+// Construct HTTP request from scratch, so we can control the headers.
+// This is an illegal request with a Content-length header and
+// Transfer-encoding set to chunked.
 const payload = `${opts.method} ${opts.path} HTTP/1.1
 Host: ${opts.host}
 Content-type: ${opts.headers['Content-Type']}
 Content-length: ${opts.headers['Content-Length']}
+Transfer-encoding: chunked
 x-amz-content-sha256: ${opts.headers['X-Amz-Content-Sha256']}
 x-amz-date: ${opts.headers['X-Amz-Date']}
 authorization: ${opts.headers['Authorization']}
